@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 7%; /* Deep Black */
+		--foreground: 120 70% 90%; /* Light Greenish White */
+		--card: 0 0% 10%; /* Slightly Lighter Black for Cards */
+		--card-foreground: 120 70% 90%;
+		--popover: 0 0% 7%;
+		--popover-foreground: 120 70% 90%;
+		--primary: 130 65% 50%; /* Neon Green */
+		--primary-foreground: 0 0% 10%; /* Dark text on green buttons */
+		--secondary: 120 10% 15%; /* Dark Greenish Gray */
+		--secondary-foreground: 120 70% 90%;
+		--muted: 120 10% 15%;
+		--muted-foreground: 120 30% 60%; /* Muted Greenish Gray */
+		--accent: 140 70% 55%; /* Slightly different Neon Green for Accent */
+		--accent-foreground: 0 0% 10%;
+		--destructive: 0 70% 50%; /* Red for destructive actions */
+		--destructive-foreground: 0 0% 100%;
+		--border: 120 20% 25%; /* Greenish Border */
+		--input: 120 10% 12%; /* Dark input background */
+		--ring: 130 65% 55%; /* Neon Green for ring */
+		--radius: 0.75rem;
+	}
+
+	.dark {
+		--background: 0 0% 7%; /* Deep Black */
+		--foreground: 120 70% 90%; /* Light Greenish White */
+		--card: 0 0% 10%; /* Slightly Lighter Black for Cards */
+		--card-foreground: 120 70% 90%;
+		--popover: 0 0% 7%;
+		--popover-foreground: 120 70% 90%;
+		--primary: 130 65% 50%; /* Neon Green */
+		--primary-foreground: 0 0% 10%; /* Dark text on green buttons */
+		--secondary: 120 10% 15%; /* Dark Greenish Gray */
+		--secondary-foreground: 120 70% 90%;
+		--muted: 120 10% 15%;
+		--muted-foreground: 120 30% 60%; /* Muted Greenish Gray */
+		--accent: 140 70% 55%; /* Slightly different Neon Green for Accent */
+		--accent-foreground: 0 0% 10%;
+		--destructive: 0 70% 50%; /* Red for destructive actions */
+		--destructive-foreground: 0 0% 100%;
+		--border: 120 20% 25%; /* Greenish Border */
+		--input: 120 10% 12%; /* Dark input background */
+		--ring: 130 65% 55%; /* Neon Green for ring */
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings: 'rlig' 1, 'calt' 1;
+	}
+}
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+  background: rgba(0, 255, 100, 0.03); /* Subtle green tint */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 255, 100, 0.15); /* Neon green border */
+  box-shadow: 0 4px 30px rgba(0, 20, 0, 0.3); /* Darker shadow with green hint */
+}
